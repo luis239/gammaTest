@@ -28,13 +28,11 @@ import javax.inject.Inject
 
 class BeersActivity : AppCompatActivity(), BeersAdapter.OnSelectedCallback,Injectable {
 
-
     private var beerList: MutableList<BeerModel>? = null
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
     lateinit var beerViewModel: BeerViewModel
     lateinit var mAdapter:BeersAdapter
-
 
     override fun onItemSelected(item: BeerModel) {
         val mEmail = Intent(Intent.ACTION_SEND)
@@ -58,7 +56,6 @@ class BeersActivity : AppCompatActivity(), BeersAdapter.OnSelectedCallback,Injec
                     if(!it.data.isNullOrEmpty()){
                         beerList = it.data as MutableList<BeerModel>?
                         mAdapter = BeersAdapter(beerList!!)
-                        //mAdapter.updateList(beerList)
                         recyclerProfile.apply {
                             adapter = mAdapter
                             setHasFixedSize(true)

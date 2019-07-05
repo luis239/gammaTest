@@ -15,7 +15,6 @@ class BeersAdapter (private val list: MutableList<BeerModel>): RecyclerView.Adap
     private var callback: OnSelectedCallback? = null
 
 
-
     fun setCallback(callback: OnSelectedCallback) {
         this.callback = callback
     }
